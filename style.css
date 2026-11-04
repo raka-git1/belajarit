@@ -1,0 +1,349 @@
+/* mengatur gaya dasar untuk seluruh halaman web
+*/:root {
+    --primary-color: #4f46e5;
+    --bg-color: #ccc4c4;
+    --card-bg: #ffffff;
+    --text-color: #0e0e0e;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+}
+
+/* container adalah wadah agar isi web tidak melebart sampai menbrak ujung kiri layar*/
+.container {
+    width: 90%; max-width: 1100px;
+    margin: 0 auto; 
+    padding: 40px 0;
+}
+
+/*memberikan warna khusus */
+.highlight {color: var(--primary-color);}
+
+
+/*BVENTUK TOMBOL*/
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.navbar {
+    position: sticky; top: 0;
+    background: white;
+    padding: 15px 0;
+    border-bottom: 1xp solid #ddd;
+    z-index: 1000;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.logo{
+    font-size: 1.5rem; font-weight: bold;
+    text-decoration: none; color: black;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.nav-links a{ text-decoration: none; color: #555;}
+
+.nav-links a.nav-btn {color: white; font-weight: bold; }
+
+.hamburger {
+    display: none; font-size: 1.5rem; cursor: pointer;
+}
+
+.hero-container {
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 40px;
+}
+
+.hero-container h1 { font-size: 1.2rem; margin: 10px 0; }
+.hero-container h2 { font-size: 1.2rem; color: #555; margin-bottom: 10px; }
+.hero-container p {margin-bottom: 20px; }
+
+.hero-image img {
+    width: 250px; height: 250;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 4px rgba(0,0,0,0,1);
+
+}
+
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title p { color: #555; margin-top: 5px; }
+
+.timeline {
+    position: relative; max-width: 800px;
+    margin: 0 auto; padding-left: 30px;
+    border-left: 3px solid var( --primary-color);
+    border-radius: 50%;
+}
+
+.timeline-content {
+    background-color: var( --card-bg);
+    border-radius: 12xp; border: 1xp solid #ddd;
+    box-shadow: 0 4px 6px rgba(0,0,0,0,1);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px); box-shadow: 0 8px 15px;
+}
+
+
+
+
+:root {
+    --primary-color: #4f46e5; 
+    --bg-color: #f9fafb;      
+    --card-bg: #ffffff;       
+    --text-color: #1f2937;     
+    --transition: all 0.3s ease; 
+}
+
+
+* { 
+    margin: 0; padding: 0;   
+    box-sizing: border-box;  
+    font-family: sans-serif; 
+}
+
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color);          
+    line-height: 1.6;                  
+}
+
+.container {
+    width: 90%; max-width: 1100px; 
+    margin: 0 auto; padding: 40px 0; 
+
+}
+.highlight { color: var(--primary-color); }
+
+
+.btn { 
+    display: inline-block;
+    padding: 10px 20px;       
+    text-decoration: none;    
+    border-radius: 8px;       
+    cursor: pointer;          
+    border: none;             
+}
+  
+
+.btn-primary { 
+    background-color: var(--primary-color); 
+    color: white; 
+}
+
+
+.navbar { 
+    position: sticky; top: 0; 
+    background: white; 
+    padding: 15px 0; 
+    border-bottom: 1px solid #ddd; 
+    z-index: 1000; 
+}
+
+
+.nav-container {
+    display: flex; justify-content: space-between; 
+    align-items: center; padding: 0; 
+}
+.logo { 
+    font-size: 1.5rem; font-weight: bold; 
+    text-decoration: none; color: black; 
+}
+
+
+.nav-links { 
+    display: flex; align-items: center; gap: 20px; 
+    list-style: none; 
+}
+
+.nav-links a { text-decoration: none; color: #555; }
+
+/* Khusus link yang menjadi tombol "Contact Me" */
+.nav-links a.nav-btn { color: white; font-weight: bold; }
+
+.hamburger { 
+    display: none; font-size: 1.5rem; cursor: pointer; 
+}
+
+/* ============================================== */
+/* 4. HERO SECTION (Area Sambutan/Halaman Depan)  */
+/* ============================================== */
+
+
+.hero-container { 
+    display: flex; justify-content: space-between; 
+    align-items: center; gap: 40px; 
+}
+
+.hero-content h1 { font-size: 2.8rem; margin: 10px 0; }
+.hero-content h2 { font-size: 1.2rem; color: #555; margin-bottom: 10px; }
+.hero-content p { margin-bottom: 20px; }
+
+/* Menghias Foto Profil */
+.hero-image img { 
+    width: 250px; height: 250px; 
+    border-radius: 50%; 
+    object-fit: cover;  
+    border: 5px solid white; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+/* ============================================== */
+/* 5. EXPERIENCE (Garis Waktu / Timeline Jejak)   */
+/* ============================================== */
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title p { color: #555; margin-top: 5px; }
+
+
+.timeline { 
+    position: relative; max-width: 800px; 
+    margin: 0 auto; padding-left: 30px; 
+    border-left: 3px solid var(--primary-color); 
+}
+
+.timeline-item { position: relative; margin-bottom: 30px; }
+
+
+.timeline-dot { 
+    position: absolute; left: -40px; top: 0; 
+    width: 18px; height: 18px; 
+    background-color: white; 
+    border: 4px solid var(--primary-color); border-radius: 50%; 
+}
+
+
+.timeline-content { 
+    background-color: var(--card-bg); padding: 20px; 
+    border-radius: 12px; border: 1px solid #ddd; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    transition: var(--transition); 
+}
+
+/* Saat kotak pengalaman disentuh mouse, angkat sedikit ke atas */
+.timeline-content:hover { 
+    transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
+}
+
+/* Label tanggal dengan latar belakang warna biru muda */
+.timeline-date { 
+    display: inline-block; background-color: #e0e7ff; 
+    color: var(--primary-color); padding: 4px 12px; 
+    border-radius: 20px; font-size: 0.85rem; 
+    font-weight: bold; margin-bottom: 10px; 
+}
+
+.timeline-content h3 { font-size: 1.2rem; color: var(--text-color); margin-bottom: 5px; }
+.timeline-content h4 { font-size: 0.95rem; color: #666; margin-bottom: 10px; font-weight: normal; }
+
+/* ============================================== */
+/* 6. GRID KARTU (Kotak-kotak Skills & Blog)      */
+/* ============================================== */
+
+/* Sistem canggih penyusun kotak otomatis */
+.skills-grid, .blog-grid {
+    display: grid; 
+    /* Baris ini menyuruh komputer: "Buat kolom sebanyak mungkin yang muat, minimal lebarnya 250px!" */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; margin-top: 20px;
+}
+
+/* Desain bentuk kartunya */
+.skill-card, .blog-card {
+    background-color: var(--card-bg); padding: 20px; 
+    border-radius: 12px; border: 1px solid #ddd; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    transition: var(--transition); 
+}
+
+/* Efek melayang saat kartu disentuh mouse */
+.skill-card:hover, .blog-card:hover {
+    transform: translateY(-5px); /* Geser posisinya 5 pixel ke arah atas */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* Pertebal bayangannya */
+}
+
+/* ============================================== */
+/* 7. FORM KONTAK (Kotak Kirim Pesan)             */
+/* ============================================== */
+
+/* Wadah luar untuk formulir */
+.contact-box { 
+    max-width: 500px; margin: 0 auto; 
+    background: white; padding: 30px; border-radius: 12px; 
+}
+
+/* Kolom isian teks */
+input, textarea { 
+    width: 100%; /* Paksa kotak isian untuk membentang penuh dari kiri ke kanan */
+    padding: 12px; margin-bottom: 15px; 
+    border: 1px solid #ddd; border-radius: 6px; 
+}
+
+/* ============================================== */
+/* 8. MODE HP / RESPONSIF (Layar Maksimal 768px)  */
+/* ============================================== */
+
+/* Semua kode di dalam @media ini HANYA JALAN jika layar seukuran HP atau Tablet */
+@media (max-width: 768px) {
+    
+    /* Munculkan kembali tombol garis tiga (burger) */
+    .hamburger { display: block; }
+    
+    /* Ubah daftar menu yang tadinya menyamping jadi menumpuk ke bawah (dropdown) */
+    .nav-links {
+        position: absolute; top: 100%; left: 0; width: 100%;
+        background: white; flex-direction: column; /* Bariskan secara vertikal/kolom */
+        text-align: center; padding: 20px 0; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        
+        /* Trik menyembunyikan menu tanpa menghilangkan elemennya dari HTML */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Saat tombol ditekan, JavaScript akan memanggil class ini untuk membuka menu */
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Karena layar HP sempit, teks dan gambar sambutan harus ditumpuk Atas-Bawah */
+    .hero-container {
+        flex-direction: column-reverse; /* column-reverse = gambar jadi di atas, teks di bawah */
+        text-align: center; /* Rata tengahkan teks */
+    }
+    
+    .hero-buttons { margin-top: 20px; }
+}
