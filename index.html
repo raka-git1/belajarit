@@ -1,97 +1,529 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <!-- Pengaturan dasar dokumen web -->
+    <!-- Pengaturan dasar dokumen -->
     <meta charset="UTF-8">
-    
-    <!-- Pengaturan layar agar web tidak terpotong saat dibuka di HP (Responsif) -->
+
+    <!-- Agar website responsif di HP, tablet, dan laptop -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Judul yang akan muncul di tab atas browser pengunjung -->
-    <title>CV Halmahera kelas 9</title>
-    
-    <!-- Mengambil koleksi ikon gratis dari internet (FontAwesome) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Menghubungkan kerangka HTML ini dengan file desain CSS kita -->
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Judul yang muncul di tab browser -->
+    <title>CV Harits Priyangga</title>
+
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Menghubungkan HTML dengan file CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <!-- ============================================== -->
-    <!-- NAVBAR: Bagian menu navigasi di atas web -->
-    <!-- ============================================== -->
-    <nav class="navbar">     
-        <div class="container nav-container">
-            <!-- Teks logo yang jika diklik akan kembali ke atas (#) -->
-            <a href="#" class="logo">Portfolio<span>.</span></a>
-            
-            <!-- Ikon garis tiga (burger) yang hanya muncul di layar HP -->
-            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
 
-            <!-- Daftar link menu (About, Experience, Contact) -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                Portfolio<span>.</span>
+            </a>
+
+            <!-- Tombol hamburger untuk HP -->
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <!-- Menu navigasi -->
             <ul class="nav-links" id="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <!-- Tombol khusus untuk menu Contact me -->
-                <li><a href="#contact" class="btn btn-primary nav-btn">Contact me</a></li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="btn btn-primary nav-btn">
+                        Contact Me
+                    </a>
+                </li>
+
             </ul>
+
         </div>
     </nav>
 
-    <!-- ============================================== -->
-    <!-- HERO SECTION: Bagian penyambutan (paling atas) -->
-    <!-- ============================================== -->
+
+    <!-- ================================================= -->
+    <!-- HERO / ABOUT SECTION -->
+    <!-- ================================================= -->
+
     <section class="hero" id="about">
+
         <div class="container hero-container">
-            
-            <!-- Kolom Teks Sambutan -->
+
+            <!-- Teks perkenalan -->
             <div class="hero-content">
-                <span class="badge">Selamat datang</span>
-                <h1>Halo, Raka rafiiandra</h1>
-                <h2>Siswa kelas 9 di SMPS Alam Purwakarta</h2>
-                <p>Saya senang mempelajari hal baru dan terus berkembang.</p>
+
+                <span class="badge">
+                    Selamat Datang 
+                </span>
+
+                <h1>
+                    Halo, saya Harits
+                </h1>
+
+                <h2>
+                    Siswa kelas 9 di SMP Sekolah Alam Purwakarta
+                </h2>
+
+                <p>
+                    Saya senang mempelajari hal baru, mengembangkan
+                    keterampilan, bekerja sama dengan orang lain,
+                    dan terus berkembang melalui berbagai pengalaman.
+                </p>
+
+                <!-- Tombol -->
                 <div class="hero-buttons">
-                    <!-- Tombol yang mengarah ke bagian project -->
-                    <a href="#projects" class="btn btn-primary">Project terdekat saya</a>
+
+                    <a href="#projects" class="btn btn-primary">
+                        Project Saya
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Hubungi Saya
+                    </a>
+
                 </div>
-            </div> 
-            
-            <!-- Kolom Foto Profil -->
-            <div class="hero-image">
-                <!-- Ganti link src ini dengan link foto aslimu nanti -->
-                <img src="benzi.jpg" alt="profile">
+
             </div>
+
+
+            <!-- Foto profil -->
+            <div class="hero-image">
+
+                <!--
+                    Ganti nama file di bawah dengan foto kamu.
+                    Contoh:
+                    assets/foto-harits.jpg
+                -->
+
+                <img src="assets/fotoharits.png" alt="Foto profil Harits">
+
+            </div>
+
         </div>
+
     </section>
 
 
-    <!-- Funding SECTION: Bagian poster dan link pendaftaran even berbayar -->
+    <!-- ================================================= -->
+    <!-- EXPERIENCE SECTION -->
+    <!-- ================================================= -->
 
-    <section class="funding" id="funding">
-        <div class="container"
-            <h2>Latest <span
-            class="highlight"><Articles></span></h2>
-            <div class="funding-grid">
+    <section class="experience" id="experience">
 
+        <div class="container">
 
-               <div class="funding-card">
-                <h3>Jalaan-jalan Purwakarta</h3>
-               </div class="funding-image"
-                <a href="#projects" class="btn btn-primary">Project terdekat saya</a>
-                </div>
-            </div> 
+            <!-- Judul section -->
+            <div class="section-title">
+
+                <h2>
+                    My <span class="highlight">Experience</span>
+                </h2>
+
+                <p>
+                    Jejak langkah dan pengalaman belajar saya di luar kelas.
+                </p>
+
             </div>
+
+
+            <!-- Timeline -->
+            <div class="timeline">
+
+
+                <!-- Pengalaman 1 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            April 2026
+                        </span>
+
+                        <h3>
+                            Kolaborasi Bersih-bersih Alam
+                        </h3>
+
+                        <h4>
+                            Tangkuban Parahu
+                        </h4>
+
+                        <p>
+                            Mengikuti kegiatan kolaborasi pelestarian
+                            lingkungan melalui aksi bersih-bersih,
+                            sekaligus mempelajari sejarah dan kondisi
+                            lingkungan destinasi wisata alam secara langsung.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pengalaman 2 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            November 2025
+                        </span>
+
+                        <h3>
+                            Magang Industri Kreatif & Live-in
+                        </h3>
+
+                        <h4>
+                            Jatiluhur
+                        </h4>
+
+                        <p>
+                            Mengasah keterampilan dan kemandirian dengan
+                            terjun langsung mempelajari industri kreatif,
+                            serta berbaur melalui kegiatan live-in bersama
+                            masyarakat setempat.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pengalaman 3 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-content">
+
+                        <span class="timeline-date">
+                            Oktober 2025
+                        </span>
+
+                        <h3>
+                            Proyek Urban Survival
+                        </h3>
+
+                        <h4>
+                            Jakarta
+                        </h4>
+
+                        <p>
+                            Berlatih problem-solving, kerja sama tim,
+                            navigasi, adaptasi di lingkungan perkotaan,
+                            serta belajar mengatur kebutuhan dan
+                            keuangan secara mandiri.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-    </div>
-</section>
 
-<!-- FOTER: Bagian kaki web paling bawah -->
+    </section>
 
-<footer>
-    <div class="container">
-        <p>&copy; Alan. Built with HTML & CSS.</p>
+
+    <!-- ================================================= -->
+    <!-- SKILLS SECTION -->
+    <!-- ================================================= -->
+
+    <section class="skills" id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    My <span class="highlight">Skills</span>
+                </h2>
+
+                <p>
+                    Beberapa keterampilan yang sedang saya pelajari.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <!-- Skill 1 -->
+                <div class="skill-card">
+
+                    <i class="fab fa-html5"></i>
+
+                    <h3>
+                        HTML
+                    </h3>
+
+                    <p>
+                        Membuat struktur dasar dan halaman website.
+                    </p>
+
+                </div>
+
+
+                <!-- Skill 2 -->
+                <div class="skill-card">
+
+                    <i class="fab fa-css3-alt"></i>
+
+                    <h3>
+                        CSS
+                    </h3>
+
+                    <p>
+                        Mendesain tampilan website agar menarik,
+                        rapi, dan responsif.
+                    </p>
+
+                </div>
+
+
+                <!-- Skill 3 -->
+                <div class="skill-card">
+
+                    <i class="fab fa-js"></i>
+
+                    <h3>
+                        JavaScript
+                    </h3>
+
+                    <p>
+                        Membuat website menjadi lebih interaktif.
+                    </p>
+
+                </div>
+
+
+                <!-- Skill 4 -->
+                <div class="skill-card">
+
+                    <i class="fas fa-users"></i>
+
+                    <h3>
+                        Teamwork
+                    </h3>
+
+                    <p>
+                        Mampu bekerja sama dan berkomunikasi
+                        dalam sebuah tim.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- PROJECTS SECTION -->
+    <!-- ================================================= -->
+
+    <section class="projects" id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    My <span class="highlight">Projects</span>
+                </h2>
+
+                <p>
+                    Beberapa proyek dan kegiatan yang pernah saya kerjakan.
+                </p>
+
+            </div>
+
+
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+
+                    <h3>
+                        Website Portfolio
+                    </h3>
+
+                    <p>
+                        Membuat website portfolio pribadi menggunakan
+                        HTML dan CSS.
+                    </p>
+
+                    <a href="#" class="btn btn-primary">
+                        Lihat Project
+                    </a>
+
+                </div>
+
+
+                <!-- Project 2 -->
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+
+                    <h3>
+                        Proyek Lingkungan
+                    </h3>
+
+                    <p>
+                        Kegiatan pembelajaran mengenai lingkungan,
+                        kebersihan, dan pelestarian alam.
+                    </p>
+
+                    <a href="#" class="btn btn-primary">
+                        Lihat Project
+                    </a>
+
+                </div>
+
+
+                <!-- Project 3 -->
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        <i class="fas fa-city"></i>
+                    </div>
+
+                    <h3>
+                        Urban Survival
+                    </h3>
+
+                    <p>
+                        Proyek pembelajaran mengenai kemandirian,
+                        navigasi, kerja sama, dan adaptasi di Jakarta.
+                    </p>
+
+                    <a href="#" class="btn btn-primary">
+                        Lihat Project
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    
+    <section class="funding" id="funding>
+     <div class="container">
+      <h2>Funrising<span class="highlight">EXPEDITION</span></h2>
+      <div class="funding-grid">
+       <div class="funding-card">
+        <h3> jalan jalan purwakarta</h3>
+        <div class="funding-title-image">
+       <img src="assets/contoh flyer.jpg" alt="funding"
+        
+            <p>Mengelilingi perpusatakan dan mengelilingi diorama di Purwakarta kota.</p>
+            <div class="hero-buttons">
+            <a href="project" class="btn btn-primary"> Daftar Sekarang </a>
+            </a>
+        </div>
+      </div>
     </div>
-</footer>
+    <div class="hero-image">
+
+
+    </section>
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                &copy; 2026 Harits Priyangga.
+                built with Harits Priyangga
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT UNTUK MENU HAMBURGER -->
+    <!-- ================================================= -->
+
+    <script>
+
+        // Mengambil elemen hamburger
+        const hamburger = document.getElementById("hamburger");
+
+        // Mengambil menu navigasi
+        const navLinks = document.getElementById("nav-links");
+
+        // Ketika hamburger diklik
+        hamburger.addEventListener("click", function () {
+
+            // Menampilkan / menyembunyikan menu
+            navLinks.classList.toggle("active");
+
+        });
+
+
+        // Menutup menu setelah salah satu link diklik
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+    </script>
+
 </body>
+
 </html>
