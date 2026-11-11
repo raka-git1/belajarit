@@ -1,9 +1,15 @@
-/* mengatur gaya dasar untuk seluruh halaman web
-*/:root {
+/* =========================================================
+   1. VARIABEL GLOBAL & WARNA DASAR
+   ========================================================= */
+
+:root {
     --primary-color: #4f46e5;
-    --bg-color: #ccc4c4;
+    --primary-hover: #4338ca;
+    --bg-color: #f9fafb;
     --card-bg: #ffffff;
-    --text-color: #0e0e0e;
+    --text-color: #1f2937;
+    --muted-color: #6b7280;
+    --border-color: #ddd;
     --transition: all 0.3s ease;
 }
 
@@ -11,28 +17,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    
+    min-height: 100vh;
 }
 
-/* container adalah wadah agar isi web tidak melebart sampai menbrak ujung kiri layar*/
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    transition: var(--transition);
+}
+
 .container {
-    width: 90%; max-width: 1100px;
-    margin: 0 auto; 
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 40px 0;
 }
 
-/*memberikan warna khusus */
-.highlight {color: var(--primary-color);}
+.highlight {
+    color: var(--primary-color);
+}
 
 
-/*BVENTUK TOMBOL*/
+/* =========================================================
+   2. KOMPONEN TOMBOL
+   ========================================================= */
+
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -40,310 +63,541 @@ body {
     border-radius: 8px;
     cursor: pointer;
     border: none;
+    transition: var(--transition);
+    font-size: 1rem;
 }
+
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
 }
 
-.navbar {
-    position: sticky; top: 0;
-    background: white;
-    padding: 15px 0;
-    border-bottom: 1xp solid #ddd;
-    z-index: 1000;
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(79, 70, 229, 0.25);
 }
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   3. NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0;
 }
-.logo{
-    font-size: 1.5rem; font-weight: bold;
-    text-decoration: none; color: black;
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.logo:hover {
+    color: var(--primary-color);
 }
 
 .nav-links {
     display: flex;
     align-items: center;
     gap: 20px;
-    list-style-type: none;
+    list-style: none;
 }
 
-.nav-links a{ text-decoration: none; color: #555;}
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
 
-.nav-links a.nav-btn {color: white; font-weight: bold; }
+.nav-links a:hover {
+    color: var(--primary-color);
+}
 
+/* Tombol Contact Me */
+.nav-links a.nav-btn {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-links a.nav-btn:hover {
+    color: white;
+}
+
+/* Hamburger */
 .hamburger {
-    display: none; font-size: 1.5rem; cursor: pointer;
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-color);
+}
+
+
+/* =========================================================
+   4. HERO SECTION
+   ========================================================= */
+
+.hero {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
 }
 
 .hero-container {
-    display: flex; justify-content: space-between;
-    align-items: center; gap: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 }
 
-.hero-container h1 { font-size: 1.2rem; margin: 10px 0; }
-.hero-container h2 { font-size: 1.2rem; color: #555; margin-bottom: 10px; }
-.hero-container p {margin-bottom: 20px; }
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.hero-content h2 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    margin-bottom: 20px;
+    color: var(--muted-color);
+}
+
+
+.funding-title-image{
+    max-width: 8000px;
+    height: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex-shrink: 0;
+}
 
 .hero-image img {
-    width: 250px; height: 250;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
     border: 5px solid white;
-    box-shadow: 0 4px rgba(0,0,0,0,1);
-
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transition: var(--transition);
 }
 
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title p { color: #555; margin-top: 5px; }
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   5. SECTION / JUDUL
+   ========================================================= */
+
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: var(--muted-color);
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   6. EXPERIENCE / TIMELINE
+   ========================================================= */
 
 .timeline {
-    position: relative; max-width: 800px;
-    margin: 0 auto; padding-left: 30px;
-    border-left: 3px solid var( --primary-color);
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Titik timeline */
+.timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border: 4px solid var(--primary-color);
     border-radius: 50%;
 }
 
+/* Isi timeline */
 .timeline-content {
-    background-color: var( --card-bg);
-    border-radius: 12xp; border: 1xp solid #ddd;
-    box-shadow: 0 4px 6px rgba(0,0,0,0,1);
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
 }
 
 .timeline-content:hover {
-    transform: translateY(-3px); box-shadow: 0 8px 15px;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-:root {
-    --primary-color: #4f46e5; 
-    --bg-color: #f9fafb;      
-    --card-bg: #ffffff;       
-    --text-color: #1f2937;     
-    --transition: all 0.3s ease; 
-}
-
-
-* { 
-    margin: 0; padding: 0;   
-    box-sizing: border-box;  
-    font-family: sans-serif; 
-}
-
-body { 
-    background-color: var(--bg-color); 
-    color: var(--text-color);          
-    line-height: 1.6;                  
-}
-
-.container {
-    width: 90%; max-width: 1100px; 
-    margin: 0 auto; padding: 40px 0; 
-
-}
-.highlight { color: var(--primary-color); }
-
-
-.btn { 
+.timeline-date {
     display: inline-block;
-    padding: 10px 20px;       
-    text-decoration: none;    
-    border-radius: 8px;       
-    cursor: pointer;          
-    border: none;             
-}
-  
-
-.btn-primary { 
-    background-color: var(--primary-color); 
-    color: white; 
+    background-color: #e0e7ff;
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-
-.navbar { 
-    position: sticky; top: 0; 
-    background: white; 
-    padding: 15px 0; 
-    border-bottom: 1px solid #ddd; 
-    z-index: 1000; 
+.timeline-content h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 5px;
 }
 
-
-.nav-container {
-    display: flex; justify-content: space-between; 
-    align-items: center; padding: 0; 
+.timeline-content h4 {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: normal;
 }
-.logo { 
-    font-size: 1.5rem; font-weight: bold; 
-    text-decoration: none; color: black; 
+
+.timeline-content p {
+    color: var(--muted-color);
 }
 
 
-.nav-links { 
-    display: flex; align-items: center; gap: 20px; 
-    list-style: none; 
+/* =========================================================
+   7. SKILLS & BLOG CARD
+   ========================================================= */
+
+.skills-grid,
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 20px;
+    margin-top: 20px;
 }
 
-.nav-links a { text-decoration: none; color: #555; }
-
-/* Khusus link yang menjadi tombol "Contact Me" */
-.nav-links a.nav-btn { color: white; font-weight: bold; }
-
-.hamburger { 
-    display: none; font-size: 1.5rem; cursor: pointer; 
+.skill-card,
+.blog-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
 }
 
-/* ============================================== */
-/* 4. HERO SECTION (Area Sambutan/Halaman Depan)  */
-/* ============================================== */
-
-
-.hero-container { 
-    display: flex; justify-content: space-between; 
-    align-items: center; gap: 40px; 
+.skill-card:hover,
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero-content h1 { font-size: 2.8rem; margin: 10px 0; }
-.hero-content h2 { font-size: 1.2rem; color: #555; margin-bottom: 10px; }
-.hero-content p { margin-bottom: 20px; }
-
-/* Menghias Foto Profil */
-.hero-image img { 
-    width: 250px; height: 250px; 
-    border-radius: 50%; 
-    object-fit: cover;  
-    border: 5px solid white; 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+.skill-card h3,
+.blog-card h3 {
+    margin-bottom: 10px;
 }
 
-/* ============================================== */
-/* 5. EXPERIENCE (Garis Waktu / Timeline Jejak)   */
-/* ============================================== */
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title p { color: #555; margin-top: 5px; }
-
-
-.timeline { 
-    position: relative; max-width: 800px; 
-    margin: 0 auto; padding-left: 30px; 
-    border-left: 3px solid var(--primary-color); 
+.skill-card p,
+.blog-card p {
+    color: var(--muted-color);
 }
 
-.timeline-item { position: relative; margin-bottom: 30px; }
+.blog-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
 
-
-.timeline-dot { 
-    position: absolute; left: -40px; top: 0; 
-    width: 18px; height: 18px; 
-    background-color: white; 
-    border: 4px solid var(--primary-color); border-radius: 50%; 
+.blog-card a:hover {
+    color: var(--primary-hover);
 }
 
 
-.timeline-content { 
-    background-color: var(--card-bg); padding: 20px; 
-    border-radius: 12px; border: 1px solid #ddd; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-    transition: var(--transition); 
+/* =========================================================
+   8. FORM KONTAK
+   ========================================================= */
+
+.contact-box {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* Saat kotak pengalaman disentuh mouse, angkat sedikit ke atas */
-.timeline-content:hover { 
-    transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
+.contact-box label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
 }
 
-/* Label tanggal dengan latar belakang warna biru muda */
-.timeline-date { 
-    display: inline-block; background-color: #e0e7ff; 
-    color: var(--primary-color); padding: 4px 12px; 
-    border-radius: 20px; font-size: 0.85rem; 
-    font-weight: bold; margin-bottom: 10px; 
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    transition: var(--transition);
 }
 
-.timeline-content h3 { font-size: 1.2rem; color: var(--text-color); margin-bottom: 5px; }
-.timeline-content h4 { font-size: 0.95rem; color: #666; margin-bottom: 10px; font-weight: normal; }
-
-/* ============================================== */
-/* 6. GRID KARTU (Kotak-kotak Skills & Blog)      */
-/* ============================================== */
-
-/* Sistem canggih penyusun kotak otomatis */
-.skills-grid, .blog-grid {
-    display: grid; 
-    /* Baris ini menyuruh komputer: "Buat kolom sebanyak mungkin yang muat, minimal lebarnya 250px!" */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px; margin-top: 20px;
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-/* Desain bentuk kartunya */
-.skill-card, .blog-card {
-    background-color: var(--card-bg); padding: 20px; 
-    border-radius: 12px; border: 1px solid #ddd; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-    transition: var(--transition); 
+input:focus,
+textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
-/* Efek melayang saat kartu disentuh mouse */
-.skill-card:hover, .blog-card:hover {
-    transform: translateY(-5px); /* Geser posisinya 5 pixel ke arah atas */
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* Pertebal bayangannya */
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+
+.footer {
+    background-color: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
 }
 
-/* ============================================== */
-/* 7. FORM KONTAK (Kotak Kirim Pesan)             */
-/* ============================================== */
-
-/* Wadah luar untuk formulir */
-.contact-box { 
-    max-width: 500px; margin: 0 auto; 
-    background: white; padding: 30px; border-radius: 12px; 
+.footer p {
+    margin: 0;
+    color: #d1d5db;
 }
 
-/* Kolom isian teks */
-input, textarea { 
-    width: 100%; /* Paksa kotak isian untuk membentang penuh dari kiri ke kanan */
-    padding: 12px; margin-bottom: 15px; 
-    border: 1px solid #ddd; border-radius: 6px; 
+.footer a {
+    color: white;
+    text-decoration: none;
 }
 
-/* ============================================== */
-/* 8. MODE HP / RESPONSIF (Layar Maksimal 768px)  */
-/* ============================================== */
+.footer a:hover {
+    color: #a5b4fc;
+}
 
-/* Semua kode di dalam @media ini HANYA JALAN jika layar seukuran HP atau Tablet */
+
+/* =========================================================
+   10. RESPONSIVE - TABLET & HP
+   ========================================================= */
+
 @media (max-width: 768px) {
-    
-    /* Munculkan kembali tombol garis tiga (burger) */
-    .hamburger { display: block; }
-    
-    /* Ubah daftar menu yang tadinya menyamping jadi menumpuk ke bawah (dropdown) */
+
+    .container {
+        width: 90%;
+        padding: 30px 0;
+    }
+
+    /* Navbar */
+    .hamburger {
+        display: block;
+    }
+
     .nav-links {
-        position: absolute; top: 100%; left: 0; width: 100%;
-        background: white; flex-direction: column; /* Bariskan secara vertikal/kolom */
-        text-align: center; padding: 20px 0; 
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        
-        /* Trik menyembunyikan menu tanpa menghilangkan elemennya dari HTML */
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: 0.3s ease-in-out;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        background: white;
+        flex-direction: column;
+        text-align: center;
+
+        padding: 20px 0;
+        gap: 15px;
+
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        /* Menu tertutup */
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 0,
+            0 0
+        );
+
+        transition: clip-path 0.3s ease-in-out;
     }
 
-    /* Saat tombol ditekan, JavaScript akan memanggil class ini untuk membuka menu */
     .nav-links.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
     }
 
-    /* Karena layar HP sempit, teks dan gambar sambutan harus ditumpuk Atas-Bawah */
-    .hero-container {
-        flex-direction: column-reverse; /* column-reverse = gambar jadi di atas, teks di bawah */
-        text-align: center; /* Rata tengahkan teks */
+    .hero {
+        min-height: auto;
+        padding: 50px 0;
     }
-    
-    .hero-buttons { margin-top: 20px; }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    .section-title h2 {
+        font-size: 1.7rem;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -35px;
+    }
+}
+
+
+/* =========================================================
+   11. RESPONSIVE - HP KECIL
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1rem;
+    }
+
+    .hero-image img {
+        width: 170px;
+        height: 170px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .skills-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box {
+        padding: 20px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-dot {
+        width: 16px;
+        height: 16px;
+        left: -30px;
+    }
 }
